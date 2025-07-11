@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: yugioh-personalcard-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: yugioh-personalcard-db
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pw
+    ports:
+      - "3306:3306"
+    volumes:
+      #- db-data:/var/lib/mysql
+      - ./DB/conf/personal_cards.sql:/docker-entrypoint-initdb.d/personal_cards.sql
