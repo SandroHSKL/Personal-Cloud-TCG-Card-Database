@@ -1,0 +1,7 @@
+# Start Befehle
+
+    xmysql -h localhost -u backend -p backend-pass -d kundenDB -o 3307 -n 3007´
+
+# Postman Befehle
+    http://localhost:3007/api/kunden
+
