@@ -2,6 +2,7 @@
 Vieles ist experimentel und wird für das was funktioniert nicht gebraucht.
 
 Bisherige Funktion 
+
 -Karten anhand von Kartenid mit mehreren Metadate wie Zustand, Aufbewahrungsort, Sprache, Set... 
 
 
