@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Backend/PCTCD/PCTCD.iml" filepath="$PROJECT_DIR$/Backend/PCTCD/PCTCD.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Personal-Cloud-TCG-Card-Database.iml" filepath="$PROJECT_DIR$/.idea/Personal-Cloud-TCG-Card-Database.iml" />
     </modules>
   </component>

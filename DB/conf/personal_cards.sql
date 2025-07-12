@@ -14,14 +14,15 @@ CREATE TABLE personal_card (
     set_code VARCHAR(10) NOT NULL,
     rarity VARCHAR(50) NOT NULL,
     card_condition VARCHAR(50) NOT NULL,
-    edition VARCHAR(50) NOT NULL,
-    storage_index VARCHAR(255),
+    edition VARCHAR(1) NOT NULL,
+    storage_location VARCHAR(50) NOT NULL,
+	storage_index VARCHAR(255),
     notes TEXT,
-    storage_location_id BIGINT NOT NULL,
+    storage_location_id BIGINT ,
     FOREIGN KEY (storage_location_id) REFERENCES storage_location(id)
 );
 
 insert into storage_location (name,notes,storage_type) values ("Sonstige","Alles was unbekannt oder sonstwas ist","Sonstige");
 insert into storage_location (name,notes,storage_type) values ("Sky Striker","ka","Deck");
 
-insert into personal_card (card_id,language,set_code,rarity,card_condition,edition,notes,storage_location_id) values (26077387,"DE","MP19-DE259","Secret","Mint","2","I love Raye",2);
+insert into personal_card (card_id,language,set_code,rarity,card_condition,edition,notes,storage_location) values (26077387,"DE","MP19-DE259","Secret","Mint","2","I love Raye","Deck Sky Striker");
