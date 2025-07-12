@@ -11,5 +11,22 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      #- db-data:/var/lib/mysql
+      - db-data:/var/lib/mysql
       - ./DB/conf/personal_cards.sql:/docker-entrypoint-initdb.d/personal_cards.sql
+
+  backend:
+    build: ./backend
+    container_name: pctcd-app
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/yugioh-personalcard-db
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: pw
+    volumes:
+      - ./Personal-Cloud-TCG-Card-Database/Data:/app/Data
+
+volumes:
+  db-data:
