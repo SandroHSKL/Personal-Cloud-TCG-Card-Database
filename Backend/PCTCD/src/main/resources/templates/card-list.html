@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Yugioh Karten Datenbank</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .action-buttons {
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="container-fluid p-4">
+<div class="row">
+
+    <div class="col-md-6">
+        <h4>Meine Karten</h4>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Card ID</th>
+                <th>Set</th>
+                <th>Sprache</th>
+                <th>Rarität</th>
+                <th>Zustand</th>
+                <th>Ort</th>
+                <th>Notiz</th>
+                <th>Aktion</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="card : ${cards}" >
+                <td th:text="${card.cardId}"></td>
+                <td th:text="${card.setCode}"></td>
+                <td th:text="${card.language}"></td>
+                <td th:text="${card.rarity}"></td>
+                <td th:text="${card.cardCondition}"></td>
+                <td th:text="${card.storageLocation}"></td>
+                <td th:text="${card.notes}"></td>
+                <td class="action-buttons">
+                    <a th:href="@{'/cards/edit/' + ${card.id}}" class="btn btn-sm btn-warning">Edit</a>
+                    <a th:href="@{'/cards/delete/' + ${card.id}}" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="/cards/new" class="btn btn-primary">➕ Neue Karte hinzufügen</a>
+    </div>
+
+</div>
+
+<script>
+
+</script>
+</body>
+</html>
